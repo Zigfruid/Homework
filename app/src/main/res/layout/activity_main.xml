@@ -82,9 +82,8 @@
             android:hint="id"
             android:textSize="25sp"
             android:textColor="#ffff"/>
-
-
     </LinearLayout>
+
     <LinearLayout
         android:id="@+id/EdtTxt4"
         android:layout_width="match_parent"

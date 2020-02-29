@@ -82,7 +82,7 @@
         app:layout_constraintTop_toBottomOf="@+id/ED4"/>
     <TextView
         android:layout_width="match_parent"
-        android:id="tx2"
+        android:id="@+id/tx2"
         android:layout_height="50dp"
         android:text="*Required field"
         app:layout_constraintStart_toStartOf="parent"
