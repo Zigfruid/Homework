@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="#522d70"
+        android:textSize="25sp"
+        android:id="@+id/txt1"
+        android:textColor="#fff"
+        android:gravity="center"
+        android:text="facebook"/>
+
+    <EditText
+        android:padding="12dp"
+        android:background="#daecf2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:id="@+id/ed1"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toTopOf="@id/ed2"
+        app:layout_constraintTop_toBottomOf="@id/txt1"
+        android:hint="Мобильный телефон или электронный адрес"/>
+
+    <EditText
+        android:padding="12dp"
+        android:background="#daecf2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/ed2"
+        android:hint="Пороль"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ed1"
+        android:layout_marginStart="16dp"
+        android:textSize="16sp"
+        android:layout_marginEnd="16dp"/>
+    <Button
+        android:layout_marginTop="16dp"
+        android:layout_width="match_parent"
+        android:id="@+id/btn1"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ed2"
+        android:text="Войти"
+        android:background="#0b3be6"
+        android:textColor="#fff"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:id="@+id/ed3"
+        android:text="или"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn1"
+        app:layout_constraintBottom_toTopOf="@id/btn2"
+        android:gravity="center"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/btn2"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="#248f14"
+        android:text="Создать аккаунт"
+        android:layout_marginStart="130dp"
+        android:layout_marginEnd="130dp"
+        android:textColor="#fff"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ed3"/>
+
+    <TextView
+        android:id="@+id/txtNum"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Забыли пороль номер телефона или электронный адрес?"
+        android:textSize="13sp"
+        app:layout_constraintTop_toBottomOf="@+id/btn2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/gd1"
+        app:layout_constraintGuide_percent="0.5"/>
+    <TextView
+        android:id="@+id/txtRus"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:text="Русский"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/gd1"
+        app:layout_constraintTop_toBottomOf="@+id/txtNum"
+        />
+    <TextView
+        android:id="@+id/txtTurk"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:text="Türkce"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/gd1"
+        app:layout_constraintTop_toBottomOf="@+id/txtRus"
+        />
+    <TextView
+        android:id="@+id/txtKor"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:text="한국어"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/gd1"
+        app:layout_constraintTop_toBottomOf="@+id/txtTurk"
+        />
+    <TextView
+        android:id="@+id/txtPor"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:text="Portugale(Brasil)"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/gd1"
+        app:layout_constraintTop_toBottomOf="@+id/txtKor"
+        />
+    <TextView
+        android:id="@+id/txtEng"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:text="English(US)"
+
+        app:layout_constraintStart_toStartOf="@id/gd1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtNum"
+        />
+
+    <TextView
+        android:id="@+id/txtUZ"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:text="O'zbek"
+        app:layout_constraintBottom_toTopOf="@id/txtEsp"
+        app:layout_constraintStart_toStartOf="@id/gd1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtEng"
+        />
+    <TextView
+        android:id="@+id/txtEsp"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:text="Espanol"
+
+        app:layout_constraintStart_toStartOf="@id/gd1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/fce"
+        app:layout_constraintTop_toBottomOf="@+id/txtUZ"
+        />
+    <TextView
+        android:id="@+id/fce"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtPor"
+        android:text="Facebook Inc."/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
