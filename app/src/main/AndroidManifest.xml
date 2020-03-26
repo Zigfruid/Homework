@@ -11,7 +11,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".winner"></activity>
         <activity android:name=".loser" />
-        <activity android:name=".startgame" />
+        <activity android:name=".StartGameActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -11,11 +11,13 @@ class loser : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_loser)
         btnRetry.setOnClickListener {
-            val intent = Intent(this, startgame::class.java)
+            intent = Intent(this, StartGameActivity::class.java)
             startActivity(intent)
+            finish()
         }
         btnRetryEnd.setOnClickListener {
             finish()
         }
     }
+
 }

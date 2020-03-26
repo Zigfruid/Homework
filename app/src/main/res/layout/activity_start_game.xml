@@ -6,7 +6,7 @@
     android:background="#80deea"
     android:id="@+id/group"
     android:layout_height="match_parent"
-    tools:context=".startgame">
+    tools:context=".StartGameActivity">
     <androidx.constraintlayout.widget.Guideline
         android:layout_width="match_parent"
         android:layout_height="match_parent"

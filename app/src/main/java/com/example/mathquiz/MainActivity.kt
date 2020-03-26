@@ -11,11 +11,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         btnStart.setOnClickListener {
-            val secondPage = Intent(this, startgame::class.java)
-            startActivity(secondPage)
+           val nextPage = Intent(this, StartGameActivity::class.java)
+            startActivity(nextPage)
         }
         btnEnd.setOnClickListener {
             finish()
+            closeContextMenu()
         }
     }
 }
