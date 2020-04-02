@@ -4,44 +4,49 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#880e4f"
+    android:background="#074D60"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/tv1"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:text="Welcome to Math Quiz"
-        android:textColor="#fff"
-        android:textSize="24dp"
-        android:gravity="center"/>
-    <Button
-        android:id="@+id/btnStart"
-        android:background="@drawable/background_btn"
+
+   <ImageView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       android:src="@drawable/parashute"
+       android:layout_marginTop="16dp"
+       android:id="@+id/IvParashutte"/>
+    <ImageView
+        android:id="@+id/btnEnd"
         android:layout_width="wrap_content"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="16dp"
-        android:textColor="#fff"
-        app:layout_constraintTop_toBottomOf="@id/tv1"
-        android:text="Start"
-        />
-    <Button
-        android:layout_marginTop="16dp"
-        android:background="@drawable/background_btn"
-        android:id="@+id/btnEnd"
-        android:textColor="#fff"
+        android:src="@drawable/btnexit"
+        android:layout_marginBottom="100dp"/>
+    <TextView
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/IvParashutte"
+        android:id="@+id/tvWelcome"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_height="50dp"
-        android:text="Exit"
-        app:layout_constraintTop_toBottomOf="@id/btnStart"/>
+        app:layout_constraintBottom_toTopOf="@id/btnStart"
+        android:text="Welcome"
+        android:textSize="34sp"
+        android:textColor="#fff"/>
+    <ImageView
+        android:id="@+id/btnStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/btnEnd"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/btnstart"
+        android:layout_marginBottom="25dp"/>
+
 
 
 
