@@ -50,9 +50,10 @@ class StartGameActivity : AppCompatActivity() {
 
         }
 
-
-
-
+    override fun onDestroy() {
+        super.onDestroy()
+        timer.cancel()
+    }
 
     private fun game() {
         var a = Random.nextInt(50, 100)
