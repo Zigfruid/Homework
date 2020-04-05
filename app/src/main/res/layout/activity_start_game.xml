@@ -24,6 +24,16 @@
         android:gravity="center"
         app:layout_constraintEnd_toEndOf="@id/gd1"/>
     <TextView
+        android:id="@+id/tvMainScore"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        app:layout_constraintStart_toStartOf="@id/gd1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="25sp"
+        android:textColor="#fff"
+        android:gravity="center"/>
+    <TextView
         android:layout_width="0dp"
         android:layout_height="100dp"
         android:id="@+id/tvTimer"

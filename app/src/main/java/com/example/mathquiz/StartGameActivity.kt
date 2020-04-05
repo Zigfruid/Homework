@@ -27,12 +27,13 @@ class StartGameActivity : AppCompatActivity() {
         game()
         count++
         tvCount.text = "Level : $count"
+        tvMainScore.text = "Score : ${count-1}"
         timer.start()
 
 
     }
 
-        private val timer = object : CountDownTimer(10000 , 1000){
+        private val timer = object : CountDownTimer(15000 , 1000){
 
         override fun onTick(p0: Long) {
            tvTimer.setText("Time : " + p0/1000 + " sec").toString()
@@ -70,7 +71,7 @@ class StartGameActivity : AppCompatActivity() {
             res = a*b
             }
             else -> {
-                res = Random.nextInt(10,20)
+                res = Random.nextInt(50,200)
                 a = res*b
                 res = a/b
                 tvMain.text = "$a/$b"
@@ -105,6 +106,7 @@ class StartGameActivity : AppCompatActivity() {
             if (pressedButton == res) {
                 Toast.makeText(this, "Верно", Toast.LENGTH_SHORT).show()
                 tvCount.text = "Level : $count"
+                tvMainScore.text = "Score : ${count-1}"
                 val sendF = Intent(this, winner::class.java)
                 sendF.putExtra("sendF", "Your Score : $count / 10")
                 sendF.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
@@ -127,6 +129,7 @@ class StartGameActivity : AppCompatActivity() {
                         Toast.makeText(this, "Верно", Toast.LENGTH_SHORT).show()
                         count++
                         tvCount.text = "Level : $count"
+                        tvMainScore.text = "Score : ${count-1}"
                     } else {
                         Toast.makeText(this, "Не Верно", Toast.LENGTH_SHORT).show()
                         val send = Intent(this, loser::class.java)
@@ -145,6 +148,7 @@ class StartGameActivity : AppCompatActivity() {
                         Toast.makeText(this, "Верно", Toast.LENGTH_SHORT).show()
                         count++
                         tvCount.text = "Level : $count"
+                        tvMainScore.text = "Score : ${count-1}"
                     } else {
                         Toast.makeText(this, "Не Верно", Toast.LENGTH_SHORT).show()
                         val send = Intent(this, loser::class.java)
@@ -163,6 +167,7 @@ class StartGameActivity : AppCompatActivity() {
                         Toast.makeText(this, "Верно", Toast.LENGTH_SHORT).show()
                         count++
                         tvCount.text = "Level : $count"
+                        tvMainScore.text = "Score : ${count-1}"
                     } else {
                         Toast.makeText(this, "Не Верно", Toast.LENGTH_SHORT).show()
                         val send = Intent(this, loser::class.java)
@@ -178,21 +183,26 @@ class StartGameActivity : AppCompatActivity() {
         }
     }
     private fun levelNormal(){
-        val a = Random.nextInt(150, 200)
+        var a = Random.nextInt(150, 200)
         val b = Random.nextInt(10, 30)
         val g = Random.nextInt(15,150)
         when (Random.nextInt(0, 4)) {
             1 ->{tvMain.text = "$a+$b*$g"
             res = a+b*g
             }
-            2 ->{tvMain.text = "$a-$b+$g"
-            res = a-b+g
+            2 ->{tvMain.text = "$a*$b*$g"
+            res = a*b*g
             }
             3 ->{tvMain.text = "$a*$b-$g"
             res = a*b-g
             }
             else ->{
+
+                res = Random.nextInt(50,200)
+                a = res*b
+                res = a/b
                 tvMain.text = "$a/$b+$g"
+
                 res = a/b+g
                 }
         }
