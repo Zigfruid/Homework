@@ -2,11 +2,13 @@ package com.example.mathquiz
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.view.View
 import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_start_game.*
+import java.util.*
 import kotlin.random.Random
 
 
@@ -14,6 +16,7 @@ import kotlin.random.Random
 class StartGameActivity : AppCompatActivity() {
     var res = 0
     var count = 0
+    private var isCanceled = false
     private val numberOfQuestion = 10
 
 
@@ -24,9 +27,32 @@ class StartGameActivity : AppCompatActivity() {
         setContentView(R.layout.activity_start_game)
         game()
         count++
-        tvCount.text = "Уровень : $count"
+        tvCount.text = "Level : $count"
+        timer.start()
+
 
     }
+
+        private val timer = object : CountDownTimer(50000 , 1000){
+
+        override fun onTick(p0: Long) {
+           tvTimer.setText("Time : " + p0/1000 + " sec").toString()
+
+        }
+
+        override fun onFinish() {
+           tvTimer.text = "Time is Over"
+            val send = Intent(this@StartGameActivity, loser::class.java)
+            send.putExtra("send", "Your Time is Over")
+            send.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+            startActivity(send)
+        }
+
+
+        }
+
+
+
 
 
     private fun game() {
@@ -66,8 +92,8 @@ class StartGameActivity : AppCompatActivity() {
             for (i in 0..4) {
                 if (i == r)
                     group[i].text = "$res"
-            }
 
+            }
 
     }
 
@@ -78,7 +104,7 @@ class StartGameActivity : AppCompatActivity() {
             val pressedButton = button.text.toString().toInt()
             if (pressedButton == res) {
                 Toast.makeText(this, "Верно", Toast.LENGTH_SHORT).show()
-                tvCount.text = "Уровень : $count"
+                tvCount.text = "Level : $count"
                 val sendF = Intent(this, winner::class.java)
                 sendF.putExtra("sendF", "Your Score : $count")
                 sendF.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
@@ -100,7 +126,7 @@ class StartGameActivity : AppCompatActivity() {
                     if (pressedButton == res) {
                         Toast.makeText(this, "Верно", Toast.LENGTH_SHORT).show()
                         count++
-                        tvCount.text = "Уровень : $count"
+                        tvCount.text = "Level : $count"
                     } else {
                         Toast.makeText(this, "Не Верно", Toast.LENGTH_SHORT).show()
                         val send = Intent(this, loser::class.java)
@@ -117,7 +143,7 @@ class StartGameActivity : AppCompatActivity() {
                     if (pressedButton == res) {
                         Toast.makeText(this, "Верно", Toast.LENGTH_SHORT).show()
                         count++
-                        tvCount.text = "Уровень : $count"
+                        tvCount.text = "Level : $count"
                     } else {
                         Toast.makeText(this, "Не Верно", Toast.LENGTH_SHORT).show()
                         val send = Intent(this, loser::class.java)
@@ -134,7 +160,7 @@ class StartGameActivity : AppCompatActivity() {
                     if (pressedButton == res) {
                         Toast.makeText(this, "Верно", Toast.LENGTH_SHORT).show()
                         count++
-                        tvCount.text = "Уровень : $count"
+                        tvCount.text = "Level : $count"
                     } else {
                         Toast.makeText(this, "Не Верно", Toast.LENGTH_SHORT).show()
                         val send = Intent(this, loser::class.java)
